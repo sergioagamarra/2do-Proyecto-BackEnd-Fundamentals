@@ -364,7 +364,7 @@ body{
   display: grid;
   grid-template-rows: auto; 
     font-family: "Montserrat", sans-serif;
-    background: linear-gradient(45deg, rgb(161, 181, 125,1) 50%, rgb(211, 236, 167,1) 50%);
+    background: radial-gradient(#D1DECD, #A4B8A6, #A7BDA2);
     background-repeat: no-repeat;
     
 }

@@ -1,7 +1,7 @@
 
 /********* FOOTER *********/
 footer{
-	background-color: #19282F;
+	background-color: #21473F;
 	height: auto;
 	width: 100%;
 	padding-top: 40px;
@@ -38,7 +38,7 @@ footer{
 	align-items: center;
 	justify-content: center;
   padding-bottom: 5px;
-  background-color: #19282F;
+  background-color: #21473F;
   margin-bottom: 20px;
 }
 
@@ -58,7 +58,7 @@ footer{
 }
 
 .socials a:hover i{
-	color: #E6AC5C;
+	color: #D1DECD;
 }
 
 .footer-bottom{
@@ -76,7 +76,7 @@ footer{
 
 .footer-bottom span{
 	text-transform: uppercase;
-	color: #E6AC5C;
+	color: #D1DECD;
 	font-weight: 200;
 }
 
@@ -87,7 +87,7 @@ footer{
 .navbar li, .navbar a, .navbar button{
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
+    color: #F3DC7E;
     text-decoration: none;
   }
   
@@ -96,15 +96,15 @@ footer{
   padding: 10px;
   margin-top: 10px;
   text-decoration: none;
-  color: #E6AC5C;
-  border: 1px solid #E6AC5C;
+  color: #F3DC7E;
+  border: 1px solid #F3DC7E;
   border-radius: 4px;
   transition: all 400ms ease;
   margin-bottom: 5px;
   }
   
   .ingresar:hover{
-    background-color: #E6AC5C;
+    background-color: #F3DC7E;
     color: white;
     }
   
@@ -114,7 +114,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     padding: 10px 10%;
-    background-color: #19282F;
+    background-color: #21473F;
   }
   .logo{
     cursor: pointer;
@@ -140,5 +140,5 @@ footer{
   }
   
   .nav_links li .menu:hover{
-    color: #E6AC5C;
+    color: #F3DC7E;
   }
