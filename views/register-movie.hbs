@@ -1,0 +1,65 @@
+
+<div class="container">
+    <div class="form-container">
+      <form action="/register-movie" method="post">
+        <h1 class="title">Register Movie</h1>
+        <div class="input-box">
+          <label for="nombre"><i class="uil uil-user icon"></i> </label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Enter the name of the movie"
+          />
+        </div>
+        
+        <div class="input-box">
+          <label for="precio"><i class="uil uil-envelope icon"></i> </label>
+          <input
+            type="number"
+            name="precio"
+            id="precio"
+            placeholder="Enter the price of the movie"
+          />
+        </div>
+        <div class="input-box">
+          <label for="profile_picture"
+            ><i class="uil uil-image icon"></i
+          ></label>
+          <input
+            type="url"
+            name="portada"
+            id="portada"
+            placeholder="Enter URL image"
+          />
+        </div>
+        <div class="input-box">
+          <label for="stock"><i class="uil uil-lock-alt icon"></i> </label>
+          <input
+            type="number"
+            name="stock"
+            id="stock"
+            placeholder="Enter the stock of the film"
+          />
+        </div>
+        <div class="input-box">
+          <label for="sinopsis"
+            ><i class="uil uil-lock-alt icon"></i>
+          </label>
+          <input
+            type="text"
+            name="sinopsis"
+            id="sinopsis"
+            placeholder="Enter the synopsis of the movie"
+          />
+        </div>
+        {{#each validation.errors}}
+          <span style="color: red;">{{this}}</span>
+        {{/each}}
+        <div>
+          <button class="button">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

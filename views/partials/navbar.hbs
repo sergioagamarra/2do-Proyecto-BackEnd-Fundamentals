@@ -1,0 +1,49 @@
+<header>
+        <img class="logo" src="/img/logo.png" alt="logo">
+        {{#if session.loggedIn}}
+            {{#if session.typeUser}}
+                <nav class="navbar">
+                    <ul class="nav_links">
+                        <li><a class="menu" href="/users">Users</a></li>
+                        <li><a class="menu" href="/movies">Movies</a></li>
+                        <li><a class="menu" href="/rentals">Rentals</a></li>
+                        {{!-- <li><a class="menu" href="#">Contact</a></li> --}}
+                    </ul>
+                </nav>
+            {{else}}
+                <nav class="navbar">
+                    <ul class="nav_links">
+                        <li><a class="menu" href="/">Home</a></li>
+                        <li><a class="menu" href="/movies">Movies</a></li>
+                        <li><a class="menu" href="/rentals/{{session.idUser}}">My Movies </a></li>
+                    </ul>
+                </nav>
+            {{/if}}
+                <ul class="nav_links">
+                    <li><a class="menu" href="/profile"> <i class="uil uil-user icon"></i> My Profile</a></li>
+                    <li><a class="ingresar" href="/logout">Log Out</a></li>
+                </ul>
+            
+            {{!-- uil uil-eye --}}
+            {{!-- <ul class="nav_links">
+                <li><a class="ingresar" href="/login">Login</a></li>
+                <li><a class="ingresar" href="/registration">Register</a></li>
+            </ul> --}}
+        {{else}}
+            <nav class="navbar">
+                <ul class="nav_links">
+                    <li><a class="menu" href="/">Home</a></li>
+                    <li><a class="menu" href="/movies">Movies</a></li>
+                    <li><a class="menu" href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <ul class="nav_links">
+                <li><a class="ingresar" href="/login">Login</a></li>
+                <li><a class="ingresar" href="/registration">Register</a></li>
+            </ul>
+        {{/if}}    
+</header>
+
+
+
+

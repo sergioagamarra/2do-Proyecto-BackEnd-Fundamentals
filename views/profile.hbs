@@ -1,0 +1,174 @@
+<h1>My profile</h1>
+<div class="profile-info-container">
+
+  <aside class="profile-picture">
+    <img src="{{userData.profilePicture}}" alt="Profile Picture" srcset="" />
+    <button class="side-button" id="general-button">General Information</button>
+    <button class="side-button" id="change-password">Change Password</button>
+    {{#if session.typeUser}}
+      <button class="side-button" id="admin-button">Give Admin Privilege</button>
+    {{/if}}
+          
+  </aside>
+
+  <main class="main-info" id="main-info">
+    <h2 class="title">Hello There, {{userData.name}}</h2>
+     
+      
+    <div class="form-container" id="general-form-container">
+      <button class="edit-btn" id="edit-btn">
+        <i class="uil uil-edit"></i>
+      </button>
+
+      <form class="profile-form" id="general-info" action="/update-user" method="post">
+       {{!-- Hidden data just for easy form --}}
+        <input class="is-hidden"  type="hidden" name="idUser" value="{{userData.idUser}}">
+        <input class="is-hidden"  type="hidden" name="profilePicture" value="{{userData.profilePicture}}">
+        <input class="is-hidden"  type="hidden" name="typeUser" value="{{userData.typeUser}}">
+       {{!-- Hidden data just for easy form --}}
+
+
+        <div class="profile-input-box">
+          <label for="name">Name</label>
+          <input
+            class="read-only"
+            type="text"
+            name="name"
+            disabled
+            value="{{userData.name}}"
+          />
+        </div>
+
+        <div class="profile-input-box">
+          <label for="email">Email:</label>
+          <input
+            class="read-only"
+            type="email"
+            name="email"
+            disabled
+            value="{{userData.email}}"
+          />
+        </div>
+
+        <div class="profile-input-box">
+          <label for="birthday">Birthday</label>
+          <input
+            class="read-only"
+            type="date"
+            name="birthday"
+            disabled
+            
+            value={{formatDate userData.birthday}}
+          />           
+        </div>
+
+        <div class="profile-input-box is-hidden">
+          <label for="password">Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="password"
+            disabled
+            placeholder="Enter your Password"
+          />
+        </div>
+
+        <div class="profile-input-box is-hidden">
+          <label for="confirm-password ">Confirm Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="confirmPassword"
+            disabled
+            placeholder="Confirm your Password"
+          />
+        </div>
+
+        <button class="save-btn is-hidden" id="save-btn">Save Changes</button>
+      </form>
+        
+     </div>
+
+     <div class="form-container is-hidden" id="password-form-container">
+      
+      <form class="profile-form" action="/update-user" method="post">
+       {{!-- Hidden data just for easy form --}}
+        <input class="is-hidden" type="hidden" name="idUser" value="{{userData.idUser}}">
+        <input class="is-hidden" type="hidden" name="name" value="{{userData.name}}">
+        <input class="is-hidden" type="hidden" name="email" value="{{userData.email}}">
+        <input class="is-hidden" type="hidden" name="birthday" value="{{formatDate userData.birthday}}">
+        <input class="is-hidden" type="hidden" name="profilePicture" value="{{userData.profilePicture}}">
+        <input class="is-hidden" type="hidden" name="typeUser" value="{{userData.typeUser}}">
+       {{!-- Hidden data just for easy form --}}
+       
+        <div class="profile-input-box">
+          <label for="old-password">Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="old-password"
+
+            placeholder="Enter your Password"
+          />
+        </div>
+         <div class="profile-input-box">
+          <label for="password ">New Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="password"
+            
+            placeholder="Enter your New Password"
+          />
+        </div>
+
+        <div class="profile-input-box">
+          <label for="confirm-password ">Confirm Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="confirmPassword"
+            
+            placeholder="Confirm your Password"
+          />
+        </div>
+
+        <button class="save-btn">Save Changes</button>
+      </form>
+        
+        
+     </div>
+
+     <div class="form-container is-hidden"  id="admin-form-container">
+
+        <form class="profile-form" id="admin-privilege-form" action="/admin-privilege" method="post">
+          <div class="profile-input-box">
+          <label for="email">Enter email</label>
+          <input
+            class="read-only"
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </div>
+
+         <div class="profile-input-box">
+          <label for="password ">Password</label>
+          <input
+            class="read-only"
+            type="password"
+            name="password"
+            
+            placeholder="Enter your Password"
+          />
+        </div>
+
+
+        <button class="save-btn">Save Changes</button>
+      </form>
+        </div>
+    </main>
+</div>
+
+
+<script src="/js/profile.js"></script>

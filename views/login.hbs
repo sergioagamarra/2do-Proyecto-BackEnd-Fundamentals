@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="form-container">
+    <h1 class="title">Login</h1>
+    <form action="/login" method="post">
+     
+        <div class="input-box">
+          <label for="email"><i class="uil uil-envelope icon"></i> </label>
+          <input
+            type="mail"
+            name="email"
+            id="email"
+            placeholder="Enter your Email"
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="password"><i class="uil uil-lock-alt icon"></i> </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your Password"
+          />
+        </div>     
+      
+        <div class="link">
+          <a href="/registration" class="link">Not a member?</a>
+        </div> 
+        {{#each validation.errors}}
+          <span style="color: red;">{{this}}</span>
+        {{/each}}
+        <div>
+          <button class="button">Login</button>
+        </div>
+    </form>
+    
+  
+  </div>
+</div>

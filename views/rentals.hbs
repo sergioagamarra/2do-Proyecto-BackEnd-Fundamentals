@@ -1,0 +1,52 @@
+
+  <ul class="people_list">
+      <h1 class="titulo">LIST OF RENTALS</h1>
+      {{#if hasRentals }}
+          <div class="container-card">
+            {{#each rentals}}
+            <div class="card">
+              {{!-- <figure> --}}
+                <img src="{{this.portada}}">
+              {{!-- </figure> --}}
+              <div class="contenido-card">
+                <h3>{{this.name}}</h3>
+                <h3>{{this.nombre}}</h3>
+                <p>{{this.email}}</p>
+                {{!-- <p>{{this.idMovie}}</p> --}}
+                <p>Fecha devolución: {{formatDate this.fechaDev}}</p>
+                {{#if this.estado}}
+                  <p>Fecha Real devolución: {{formatDate this.fechaRealDev}}</p>
+                {{else}}
+                  {{!-- {{#if (controlDate this.fechaDev)}}
+                    <p style="color: red">{{validateDate this.fechaDev}} <br> Comisión del 10% </p>
+                  {{else}}
+                    <p style="color: green">{{validateDate this.fechaDev}}</p>
+                  {{/if}} --}}
+
+                  {{#if (validateDate (formatDate this.fechaDev) (formatDate ../today))}}
+                            <p style="color: red"> ⚠ RENT EXPIRED! {{formatHour this.fecha_fin}}. 10% commission</p>
+                        {{else}}
+                            <p style="color: green"> 🕑 {{return ../today this.fechaDev}}</p>
+                        {{/if}}
+
+
+                  {{#if ../typeUser}}
+                  {{else}}
+                    <a href="/return-movie/{{this.idRental}}">Return</a>
+                  {{/if}}
+                  
+                {{/if}}
+                {{!-- <p>{{this.sinopsis}}</p> --}}
+                {{!-- <p>{{this.stock}}</p> --}}
+                
+                  {{!-- <a href="#">Editar</a>
+                  <a href="/users" onclick="DeleteUser({{this.idUser}})">Eliminar</a> --}}
+                
+              </div>
+            </div>
+            {{/each}}
+          </div>
+      {{else}}
+        <p>No tienes rentas</p>
+      {{/if}}
+    </ul>

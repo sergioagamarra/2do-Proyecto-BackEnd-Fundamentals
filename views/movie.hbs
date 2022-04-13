@@ -1,0 +1,78 @@
+{{!-- {{#if typeUser }} --}}
+
+  <ul class="people_list">
+    <h1 class="titulo">LIST OF MOVIES</h1>
+    <div class="container-search">
+      <div class="selector-container">
+        <select name="order-movies" id="order-movies" onchange="changeOrder()">
+          <option selected value="value1">Select Order</option>
+          <option value="value2">Nombre A-Z</option>
+          <option value="value3">Nombre Z-A</option>
+          <option value="value4">Rating</option>
+          <option value="value5">More Views</option>
+        </select>
+      </div>
+      <div class="form-search-container">
+        
+        <form action="/movies" method="post"> 
+          <input type="text"
+              name="nameMovie"
+              id="nameMovie"
+              placeholder="Enter the name of the movie to search">
+          <div class="button-search">
+            <button class="button"><i class="uil uil-search icon"></i>  Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{#if hasMovies }}
+      <div class="container-card">
+        {{#each movies}}
+          <div class="card">
+            
+            <img src="{{this.portada}}">
+            
+            <div class="contenido-card">
+              <h3 id="nameMovie" class="nameMovie">{{this.nombre}} </h3>
+              <p>${{this.precio}}</p>
+                  <p> {{#if this.rating}} 
+                    ⭐ {{twoDecimals this.rating}}
+                    {{/if}} 
+                    {{#if this.views}} 
+                      <i class="uil uil-eye"></i></i> {{this.views}}
+                    {{/if}}
+                  </p>
+
+                {{#if ../typeUser}}
+                  <a href="/edit-movie/{{this.idMovie}}" >Editar</a>
+                  <a href="/movies" onclick="DeleteMovie({{this.idMovie}})">Eliminar</a>
+                {{else}}
+
+                  {{#if this.stock}}
+                    <div class="sinopsis">
+                      <p class="p-sinopsis" >{{this.sinopsis}}</p>
+                    </div>
+                    <a href="/register-rental/{{this.idMovie}}">Alquilar</a>
+                  {{else}}
+                    <h3>Sin stock</h3>
+                  {{/if}}
+                  
+                {{/if}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      {{#if typeUser}}
+        <a href="/register-movie"> Register Movie</a>
+      {{/if}}
+    {{else}}
+      <p class="p-list">Ninguna película registrada</p>
+      {{#if typeUser}}
+        <a href="/register-movie"> Register Movie</a>
+      {{/if}}
+    {{/if}}
+  </ul>
+  
+
+
+<script src="/js/movies.js"></script>

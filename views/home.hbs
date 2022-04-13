@@ -1,0 +1,63 @@
+<div class="general-container">
+    <h1>Tzuzul's Cinema</h1>
+    <div class="carousel">
+        <h2>Movies</h2>
+        <a class="home-link" href="/movies">See More</a>
+        <button class="carousel-button button-left">&#5176  </button>
+        <div class="track-container">
+            <ul class="track">
+                 {{#each movies}}
+                    <li class="slide">
+                         <img  class="image" src="{{this.portada}}" alt="Front Page of film" srcset="">
+                    </li>
+                {{/each}}
+          
+            
+            </ul>
+        </div>
+        <button class="carousel-button button-right"> &#5171</button>
+    </div>
+
+    <hr class="division-line">
+
+    <div class="carousel">
+        <h2>Trending Movies</h2>
+        <a class="home-link" href="/movies">See More</a>
+        <button class="carousel-button button-left">&#5176  </button>
+        <div class="track-container">
+            <ul class="track">
+                {{#each trendingMovies}}
+                    <li class="slide">
+                        <img  class="image" src="{{this.portada}}" alt="Front Page of film" srcset="">
+                    </li>
+                {{/each}}
+          
+            
+            </ul>
+        </div>
+        <button class="carousel-button button-right"> &#5171</button>
+    </div>
+
+    <hr class="division-line">
+
+    <div class="carousel">
+        <h2>Top Rated Movies</h2>
+        <a class="home-link" href="/movies">See More</a>
+        <button class="carousel-button button-left">&#5176  </button>
+        <div class="track-container">
+            <ul class="track">
+                {{#each topRatedMovies}}
+                    <li class="slide">
+                        <img  class="image" src="{{this.portada}}" alt="Front Page of film" srcset="">
+                    </li>
+                {{/each}}
+          
+            
+            </ul>
+        </div>
+        <button class="carousel-button button-right"> &#5171</button>
+    </div>
+</div>
+
+
+<script src="/js/carousel.js"></script>

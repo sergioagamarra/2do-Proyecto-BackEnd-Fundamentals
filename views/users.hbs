@@ -1,0 +1,56 @@
+{{#if typeUser}}
+  {{#if hasUsers }}
+  <ul class="people_list">
+    <h1 class="titulo">LIST OF USERS</h1>
+        <div class="container-card">
+          {{#each users}}
+          <div class="card">
+            {{!-- <figure> --}}
+              <img src="{{this.profilePicture}}">
+            {{!-- </figure> --}}
+            <div class="contenido-card">
+              <h3>{{this.name}}</h3>
+              <p>{{this.email}}</p>
+              {{!-- <p>{{this.sinopsis}}</p> --}}
+              {{!-- <p>{{this.stock}}</p> --}}
+              
+                <a href="#">Editar</a>
+                <a href="/users" onclick="DeleteUser({{this.idUser}})">Eliminar</a>
+              
+            </div>
+          </div>
+          {{/each}}
+        </div>
+  </ul>
+  {{else}}
+    <p class="p-list">Ningun usuario registrado</p>
+  {{/if}}
+
+{{else}}
+  {{#if hasUsers }}
+  <ul class="people_list">
+    <h1 class="titulo">LIST OF USERS</h1>
+        <div class="container-card">
+          {{#each users}}
+          <div class="card">
+            {{!-- <figure> --}}
+              <img src="{{this.profilePicture}}">
+            {{!-- </figure> --}}
+            <div class="contenido-card">
+              <h3>{{this.name}}</h3>
+              <p>{{this.email}}</p>
+              {{!-- <p>{{this.sinopsis}}</p> --}}
+              {{!-- <p>{{this.stock}}</p> --}}
+              
+                {{!-- <a href="#">Editar</a>
+                <a href="/" onclick="DeleteUser({{this.idUser}})">Eliminar</a>
+               --}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+  </ul>
+  {{else}}
+    <p class="p-list">Ningun usuario registrado</p>
+  {{/if}}
+{{/if}}

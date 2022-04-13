@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="form-container">
+      <form class="return" action="/return-movie" method="post">
+        <h1 class="title">Register Rental</h1>
+        <img src="{{movie.portada}}">
+        <p>{{movie.nombre}}</p>
+        <div class="input-box">
+          <label for="idRental"><i class="uil uil-list-ol"></i> Rental</label>
+          <input
+            type="number"
+            name="idRental"
+            id="idRental"
+            placeholder="Enter user id"
+            value="{{rental.idRental}}"
+            readonly
+          />
+        </div>
+        <div class="input-box">
+          <label for="idUser"><i class="uil uil-list-ol"></i> User</label>
+          <input
+            type="number"
+            name="idUser"
+            id="idUser"
+            placeholder="Enter user id"
+            value="{{rental.idUser}}"
+            readonly
+          />
+        </div>
+        
+        <div class="input-box">
+          <label for="idMovie"><i class="uil uil-film"></i> Movie</label>
+          <input
+            type="number"
+            name="idMovie"
+            id="idMovie"
+            placeholder="Enter movie id"
+            value="{{movie.idMovie}}"
+            readonly
+          />
+        </div>
+        <div class="input-box">
+          <label for="fechaAlquiler"><i class="uil uil-calendar-alt"></i> Rental Date</label>
+          <input
+            type="date"
+            name="fechaAlquiler"
+            id="fechaAlquiler"
+            placeholder="Enter rental date"
+            value="{{formatDate rental.fechaAlquiler}}"
+            readonly
+          />
+        </div>
+        <div class="input-box">
+          <label for="fechaDev"><i class="uil uil-calendar-alt"></i> Return Date</label>
+          <input
+            type="date"
+            name="fechaDev"
+            id="fechaDev"
+            placeholder="Enter the return date"
+            value="{{formatDate rental.fechaDev}}"
+            readonly
+          />
+        </div>
+        <div class="input-box">
+          <label for="fechaRealDev"><i class="uil uil-calender"></i> Actual Return Date</label>
+          <input
+            type="date"
+            name="fechaRealDev"
+            id="fechaRealDev"
+            placeholder="Enter the actual return date"
+            value="{{formatDate rental.fechaRealDev}}"
+            readonly
+          />
+        </div>
+        <label for="start"><i class="uil uil-start icon"></i> Calification</label>
+        <div class="star-widget">
+          <input type="radio" name="rate-5" id="rate-5">
+          <label for="rate-5" class="fas fa-star"></label>
+          <input type="radio" name="rate-4" id="rate-4">
+          <label for="rate-4" class="fas fa-star"></label>
+          <input type="radio" name="rate-3" id="rate-3">
+          <label for="rate-3" class="fas fa-star"></label>
+          <input type="radio" name="rate-2" id="rate-2">
+          <label for="rate-2" class="fas fa-star"></label>
+          <input type="radio" name="rate-1" id="rate-1">
+          <label for="rate-1" class="fas fa-star"></label>
+        </div>
+        <div>
+          <button class="button">Rate and Return</button>
+        </div>
+      </form>
+    </div>
+  </div>

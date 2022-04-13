@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="form-container">
+      <form class="return" action="/register-rental" method="post">
+        <h1 class="title">Register Rental</h1>
+        <img src="{{movie.portada}}">
+        <p>{{movie.nombre}}</p>
+        <h1>${{movie.precio}}</h1>
+        <p style="color: red"> ⚠ 10% commission for expired returns</p>
+        <div class="input-box">
+          <label for="idUser"><i class="uil uil-list-ol"></i> Usuario</label>
+          <input
+          class="ineditable-number"
+            type="number"
+            name="idUser"
+            id="idUser"
+            placeholder="Enter user id"
+            value="{{session.idUser}}"
+            readonly
+          />
+        </div>
+        
+        <div class="input-box">
+          <label for="idMovie"><i class="uil uil-list-ol"></i> Movie</label>
+          <input
+            class="ineditable-number"
+            type="number"
+            name="idMovie"
+            id="idMovie"
+            placeholder="Enter movie id"
+            value="{{movie.idMovie}}"
+            readonly
+          />
+        </div>
+        <div class="input-box">
+          <label for="fechaAlquiler"><i class="uil uil-calendar-alt"></i>Rental Date</label>
+          <input
+            type="date"
+            name="fechaAlquiler"
+            id="fechaAlquiler"
+            placeholder="Enter rental date"
+            value="{{formatDate today}}"
+            readonly 
+          />
+        </div>
+        <div class="input-box">
+          <label for="fechaDev"><i class="uil uil-calendar-alt"></i>Return Date</label>
+          <input
+            type="date"
+            name="fechaDev"
+            id="fechaDev"
+            placeholder="Enter the return date"
+            value="{{formatDate dateDev}}"
+            readonly 
+          />
+        </div>
+        <div>
+          <button class="button">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>

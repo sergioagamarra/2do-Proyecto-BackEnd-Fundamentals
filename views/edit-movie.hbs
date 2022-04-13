@@ -1,0 +1,76 @@
+
+<div class="container">
+    <div class="form-container">
+      <form action="/edit-movie" method="post">
+        <h1 class="title">Edit Movie</h1>
+        <div class="input-box">
+          <label for="idMovie"><i class="uil uil-list-ol"></i> </label>
+          <input
+            class="ineditable-number"
+            type="number"
+            name="idMovie"
+            id="idMovie"
+            placeholder="Enter the price of the movie"
+            value="{{movie.idMovie}}"
+            readonly
+            
+          />
+        </div>
+        <div class="input-box">
+          <label for="nombre"><i class="uil uil-film"></i></label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Enter the name of the movie"
+            value="{{movie.nombre}}"
+          />
+        </div>
+        
+        <div class="input-box">
+          <label for="precio"><i class="uil uil-dollar-alt"></i></label>
+          <input
+            type="number"
+            name="precio"
+            id="precio"
+            placeholder="Enter the price of the movie"
+            value="{{movie.precio}}"
+          />
+        </div>
+        <div class="input-box">
+          <label for="portada"><i class="uil uil-image-plus"></i></label>
+          <input
+            type="url"
+            name="portada"
+            id="portada"
+            placeholder="Enter URL image"
+            value="{{movie.portada}}"
+          />
+        </div>
+        <div class="input-box">
+          <label for="stock"><i class="uil uil-shopping-cart-alt"></i></label>
+          <input
+            type="number"
+            name="stock"
+            id="stock"
+            placeholder="Enter the stock of the film"
+            value="{{movie.stock}}"
+          />
+        </div>
+        <div class="input-box">
+          <label for="sinopsis"><i class="uil uil-file-alt"></i></label>
+          <input
+            type="text"
+            name="sinopsis"
+            id="sinopsis"
+            placeholder="Enter the synopsis of the movie"
+            value="{{movie.sinopsis}}"
+          />
+        </div>
+        
+        <div>
+          <button class="button">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
